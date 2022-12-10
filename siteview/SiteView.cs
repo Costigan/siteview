@@ -25,6 +25,8 @@ namespace siteview
         protected bool _trackbarIsUpdating;
         Dictionary<IMapLayer, UserControl> _layerPropertySheets = new Dictionary<IMapLayer, UserControl>();
 
+        terrain.InMemoryTerrainManager _Terrain;
+
         public SiteView()
         {
             InitializeComponent();
@@ -125,18 +127,33 @@ namespace siteview
             lon = 0d;
         }
 
-        #endregion
-
         private void test1ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var d = new SiteDataset(@"C:\RP\tiles\sp\landing_site_datasets\site_001");
         }
 
+        private void tbTransparency_ValueChanged(object sender, EventArgs e)
+        {
+            if (_trackbarIsUpdating)
+                return;
+            if (lvLayers.SelectedIndices.Count != 1)
+                return;
+            var lt = GetSelectedLayer();
+            if (lt != null)
+            {
+                lt.Transparency = tbTransparency.Value / 100f;
+                var index = lvLayers.SelectedIndices[0];
+                lvLayers.Items[index].SubItems[1].Text = tbTransparency.Value.ToString("00");
+                MapView.Invalidate();
+            }
+        }
+
+        #endregion
+
         #region Handle Layers
 
         private void lvLayers_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var idx = lvLayers.SelectedIndices.Count > 0 ? lvLayers.SelectedIndices[0] : -1;
             if (_isUpdating)
                 return;
             if (lvLayers.SelectedIndices.Count < 1)
@@ -319,20 +336,35 @@ namespace siteview
 
         #endregion
 
-        private void tbTransparency_ValueChanged(object sender, EventArgs e)
+        #region Terrain
+
+        public terrain.InMemoryTerrainManager Terrain
         {
-            if (_trackbarIsUpdating)
-                return;
-            if (lvLayers.SelectedIndices.Count != 1)
-                return;
-            var lt = GetSelectedLayer();
-            if (lt != null)
+            get
             {
-                lt.Transparency = tbTransparency.Value / 100f;
-                var index = lvLayers.SelectedIndices[0];
-                lvLayers.Items[index].SubItems[1].Text = tbTransparency.Value.ToString("00");
-                MapView.Invalidate();
+                if (_Terrain != null)
+                    return _Terrain;
+                _Terrain = new terrain.InMemoryTerrainManager();
+                _Terrain.LoadSouth();
+                return _Terrain;
             }
+        }
+
+        #endregion
+
+        private void ControlsPanelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LegendToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PropertiesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

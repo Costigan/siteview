@@ -30,6 +30,16 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.siteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.controlsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.controlsPanelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.legendToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.propertiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.plotToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.timeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.test1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblLatLon = new System.Windows.Forms.ToolStripStatusLabel();
             this.pnlTime = new System.Windows.Forms.Panel();
@@ -61,18 +71,8 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.splitter4 = new System.Windows.Forms.Splitter();
-            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.controlsPanelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.legendToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.propertiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.plotToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.timeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlControls = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.controlsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.siteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.test1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.pnlTime.SuspendLayout();
@@ -105,6 +105,83 @@
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "&File";
+            // 
+            // siteToolStripMenuItem
+            // 
+            this.siteToolStripMenuItem.Name = "siteToolStripMenuItem";
+            this.siteToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.siteToolStripMenuItem.Text = "&Sites";
+            // 
+            // viewToolStripMenuItem
+            // 
+            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.controlsToolStripMenuItem,
+            this.controlsPanelToolStripMenuItem,
+            this.legendToolStripMenuItem,
+            this.propertiesToolStripMenuItem,
+            this.plotToolStripMenuItem,
+            this.timeToolStripMenuItem});
+            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.viewToolStripMenuItem.Text = "&Panels";
+            // 
+            // controlsToolStripMenuItem
+            // 
+            this.controlsToolStripMenuItem.Name = "controlsToolStripMenuItem";
+            this.controlsToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.controlsToolStripMenuItem.Text = "Controls";
+            // 
+            // controlsPanelToolStripMenuItem
+            // 
+            this.controlsPanelToolStripMenuItem.Checked = true;
+            this.controlsPanelToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.controlsPanelToolStripMenuItem.Name = "controlsPanelToolStripMenuItem";
+            this.controlsPanelToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.controlsPanelToolStripMenuItem.Text = "Layers";
+            this.controlsPanelToolStripMenuItem.Click += new System.EventHandler(this.ControlsPanelToolStripMenuItem_Click);
+            // 
+            // legendToolStripMenuItem
+            // 
+            this.legendToolStripMenuItem.Checked = true;
+            this.legendToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.legendToolStripMenuItem.Name = "legendToolStripMenuItem";
+            this.legendToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.legendToolStripMenuItem.Text = "Legend";
+            this.legendToolStripMenuItem.Click += new System.EventHandler(this.LegendToolStripMenuItem_Click);
+            // 
+            // propertiesToolStripMenuItem
+            // 
+            this.propertiesToolStripMenuItem.Name = "propertiesToolStripMenuItem";
+            this.propertiesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.propertiesToolStripMenuItem.Text = "Properties";
+            this.propertiesToolStripMenuItem.Click += new System.EventHandler(this.PropertiesToolStripMenuItem_Click);
+            // 
+            // plotToolStripMenuItem
+            // 
+            this.plotToolStripMenuItem.Name = "plotToolStripMenuItem";
+            this.plotToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.plotToolStripMenuItem.Text = "Plot";
+            // 
+            // timeToolStripMenuItem
+            // 
+            this.timeToolStripMenuItem.Name = "timeToolStripMenuItem";
+            this.timeToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.timeToolStripMenuItem.Text = "Time";
+            // 
+            // testToolStripMenuItem
+            // 
+            this.testToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.test1ToolStripMenuItem});
+            this.testToolStripMenuItem.Name = "testToolStripMenuItem";
+            this.testToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
+            this.testToolStripMenuItem.Text = "&Test";
+            // 
+            // test1ToolStripMenuItem
+            // 
+            this.test1ToolStripMenuItem.Name = "test1ToolStripMenuItem";
+            this.test1ToolStripMenuItem.Size = new System.Drawing.Size(101, 22);
+            this.test1ToolStripMenuItem.Text = "&Test1";
+            this.test1ToolStripMenuItem.Click += new System.EventHandler(this.test1ToolStripMenuItem_Click);
             // 
             // statusStrip1
             // 
@@ -428,53 +505,6 @@
             this.splitter4.TabIndex = 29;
             this.splitter4.TabStop = false;
             // 
-            // viewToolStripMenuItem
-            // 
-            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.controlsToolStripMenuItem,
-            this.controlsPanelToolStripMenuItem,
-            this.legendToolStripMenuItem,
-            this.propertiesToolStripMenuItem,
-            this.plotToolStripMenuItem,
-            this.timeToolStripMenuItem});
-            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
-            this.viewToolStripMenuItem.Text = "&Panels";
-            // 
-            // controlsPanelToolStripMenuItem
-            // 
-            this.controlsPanelToolStripMenuItem.Checked = true;
-            this.controlsPanelToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.controlsPanelToolStripMenuItem.Name = "controlsPanelToolStripMenuItem";
-            this.controlsPanelToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.controlsPanelToolStripMenuItem.Text = "Layers";
-            // 
-            // legendToolStripMenuItem
-            // 
-            this.legendToolStripMenuItem.Checked = true;
-            this.legendToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.legendToolStripMenuItem.Name = "legendToolStripMenuItem";
-            this.legendToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.legendToolStripMenuItem.Text = "Legend";
-            // 
-            // propertiesToolStripMenuItem
-            // 
-            this.propertiesToolStripMenuItem.Name = "propertiesToolStripMenuItem";
-            this.propertiesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.propertiesToolStripMenuItem.Text = "Properties";
-            // 
-            // plotToolStripMenuItem
-            // 
-            this.plotToolStripMenuItem.Name = "plotToolStripMenuItem";
-            this.plotToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.plotToolStripMenuItem.Text = "Plot";
-            // 
-            // timeToolStripMenuItem
-            // 
-            this.timeToolStripMenuItem.Name = "timeToolStripMenuItem";
-            this.timeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.timeToolStripMenuItem.Text = "Time";
-            // 
             // pnlControls
             // 
             this.pnlControls.Controls.Add(this.label1);
@@ -493,33 +523,6 @@
             this.label1.Size = new System.Drawing.Size(45, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Controls";
-            // 
-            // controlsToolStripMenuItem
-            // 
-            this.controlsToolStripMenuItem.Name = "controlsToolStripMenuItem";
-            this.controlsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.controlsToolStripMenuItem.Text = "Controls";
-            // 
-            // siteToolStripMenuItem
-            // 
-            this.siteToolStripMenuItem.Name = "siteToolStripMenuItem";
-            this.siteToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
-            this.siteToolStripMenuItem.Text = "&Sites";
-            // 
-            // testToolStripMenuItem
-            // 
-            this.testToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.test1ToolStripMenuItem});
-            this.testToolStripMenuItem.Name = "testToolStripMenuItem";
-            this.testToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
-            this.testToolStripMenuItem.Text = "&Test";
-            // 
-            // test1ToolStripMenuItem
-            // 
-            this.test1ToolStripMenuItem.Name = "test1ToolStripMenuItem";
-            this.test1ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.test1ToolStripMenuItem.Text = "&Test1";
-            this.test1ToolStripMenuItem.Click += new System.EventHandler(this.test1ToolStripMenuItem_Click);
             // 
             // SiteView
             // 
